@@ -10,10 +10,13 @@ function send({
   ...mailDetails
 }) {
   const transport = nodemailer.createTransport({
-    hostname,
+    host: hostname,
     port,
     secure: port === 465,
-    auth: { username, password },
+    auth: {
+      user: username,
+      pass: password,
+    },
   });
 
   return sendWithTransport(transport, mailDetails);
