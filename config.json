@@ -116,6 +116,15 @@
           "description": "HTML version of email",
           "placeholder": "<b><em>Your Pipeline has completed sucessfully!</em></b><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/64/Champagne_uncorking_photographed_with_a_high_speed_air-gap_flash.jpg\" alt=\"champagne image\">",
           "required": false
+        },
+        {
+          "name": "attachmentPaths",
+          "viewName": "Attachment Paths",
+          "type": "text",
+          "description": "Paths to files on Kaholo agent to attach to email (one path per line)",
+          "placeholder": "/home/testpipeline-001/results.zip\n/home/testpipeline-002/results.zip",
+          "parserType": "array",
+          "required": false
         }
       ]
     }
