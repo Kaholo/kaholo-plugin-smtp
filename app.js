@@ -1,25 +1,32 @@
-const nodemailer = require("nodemailer");
 const kaholoPluginLibrary = require("@kaholo/plugin-library");
-const { sendWithTransport } = require("./mail-service");
+const { SmtpMailService } = require("./smtp-mail-service");
 
 function send({
   hostname,
   port,
   username,
   password,
-  ...mailDetails
+  from,
+  to,
+  subject,
+  cc,
+  bcc,
+  text,
+  html,
+  attachmentPaths,
 }) {
-  const transport = nodemailer.createTransport({
-    host: hostname,
-    port,
-    secure: port === 465,
-    auth: {
-      user: username,
-      pass: password,
-    },
-  });
+  const smtpMailService = new SmtpMailService(hostname, +port, username, password);
 
-  return sendWithTransport(transport, mailDetails);
+  return smtpMailService.send({
+    from,
+    to,
+    subject,
+    cc,
+    bcc,
+    text,
+    html,
+    attachmentPaths,
+  });
 }
 
 module.exports = kaholoPluginLibrary.bootstrap({
