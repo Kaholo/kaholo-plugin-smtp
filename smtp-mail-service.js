@@ -45,6 +45,4 @@ class SmtpMailService {
   }
 }
 
-module.exports = {
-  SmtpMailService,
-};
+module.exports = SmtpMailService;

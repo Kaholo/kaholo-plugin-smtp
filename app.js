@@ -1,5 +1,5 @@
 const kaholoPluginLibrary = require("@kaholo/plugin-library");
-const { SmtpMailService } = require("./smtp-mail-service");
+const SmtpMailService = require("./smtp-mail-service");
 
 function send({
   hostname,
@@ -15,7 +15,7 @@ function send({
   html,
   attachmentPaths,
 }) {
-  const smtpMailService = new SmtpMailService(hostname, +port, username, password);
+  const smtpMailService = new SmtpMailService(hostname, port, username, password);
 
   return smtpMailService.send({
     from,
