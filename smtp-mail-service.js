@@ -20,25 +20,10 @@ class SmtpMailService {
   }
 
   send({
-    to,
-    from,
-    subject,
-    cc,
-    bcc,
-    text,
-    html,
     attachmentPaths,
+    ...mailOptions
   }) {
-    const correctedMailOptions = {
-      to,
-      from,
-      subject,
-      cc,
-      bcc,
-      text,
-      html,
-      attachmentPaths,
-    };
+    const correctedMailOptions = { ...mailOptions };
 
     SmtpMailService.FIELDS_WITH_MULTILINE_SUPPORT.forEach((field) => {
       if (correctedMailOptions[field]) {
