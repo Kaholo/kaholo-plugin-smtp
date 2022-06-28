@@ -1,0 +1,132 @@
+{
+  "name": "smtp",
+  "viewName": "Simple Mail Transfer Protocol",
+  "type": "executer",
+  "execProgram": "node",
+  "main": "app.js",
+  "version": "1.0.0",
+  "imgUrl": "logo.png",
+  "keywords": [
+    "email",
+    "mail",
+    "smtp",
+    "message",
+    "notifications"
+  ],
+  "category": "NOTIFICATIONS",
+  "auth": {
+    "authId": "smtpAccount",
+    "params": [
+      {
+        "name": "hostname",
+        "viewName": "Host",
+        "type": "string",
+        "description": "Hostname or IP address of your SMTP server",
+        "placeholder": "email-smtp.ap-southnorth-1.amazonaws.com"
+      },
+      {
+        "name": "port",
+        "viewName": "Port",
+        "type": "int",
+        "description": "Port number of STMP server",
+        "placeholder": 25,
+        "parserType": "number"
+      },
+      {
+        "name": "username",
+        "viewName": "Username",
+        "type": "string",
+        "description": "Username to authenticate with to the host.",
+        "placeholder": "myuser@host.com"
+      },
+      {
+        "name": "password",
+        "viewName": "Password",
+        "type": "vault",
+        "description": "Password to authenticate with to the host."
+      }
+    ]
+  },
+  "settings": [
+    {
+      "name": "from",
+      "viewName": "From",
+      "type": "string",
+      "description": "The email address of the sender of the email",
+      "placeholder": "kaholo-notifications@myorg.com"
+    }
+  ],
+  "methods": [
+    {
+      "name": "send",
+      "viewName": "Send Mail",
+      "params": [
+        {
+          "name": "from",
+          "viewName": "From",
+          "type": "string",
+          "description": "The email address of the sender of the email",
+          "placeholder": "kaholo-notifications@myorg.com",
+          "required": true
+        },
+        {
+          "name": "to",
+          "viewName": "To",
+          "type": "text",
+          "description": "One or more email addresses (comma or new line separated) of recipients of the email",
+          "placeholder": "johnny.d@myorg.com, amber.h@myorg.com",
+          "required": true
+        },
+        {
+          "name": "subject",
+          "viewName": "Message Subject",
+          "type": "string",
+          "description": "The subject line of the email message",
+          "placeholder": "Pipeline Success Notification",
+          "required": true
+        },
+        {
+          "name": "cc",
+          "viewName": "CC",
+          "type": "text",
+          "description": "One or more email addresses (comma or new line separated) of CC recipients of the email",
+          "placeholder": "penney.a@myorg.com",
+          "required": false
+        },
+        {
+          "name": "bcc",
+          "viewName": "BCC",
+          "type": "text",
+          "description": "One or more email addresses (comma or new line separated) of BCC recipients of the email",
+          "placeholder": "ray.c@myorg.com",
+          "required": false
+        },
+        {
+          "name": "text",
+          "viewName": "Plain Text Message",
+          "type": "string",
+          "description": "Plaintext version of email",
+          "placeholder": "Your Pipeline has completed successfully!",
+          "required": false
+        },
+        {
+          "name": "html",
+          "viewName": "HTML Message",
+          "type": "string",
+          "description": "HTML version of email",
+          "placeholder": "<b><em>Your Pipeline has completed sucessfully!</em></b><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/64/Champagne_uncorking_photographed_with_a_high_speed_air-gap_flash.jpg\" alt=\"champagne image\">",
+          "required": false
+        },
+        {
+          "name": "attachmentPaths",
+          "viewName": "Attachment Paths",
+          "type": "text",
+          "description": "Paths to files on Kaholo agent to attach to email (one path per line)",
+          "placeholder": "/home/testpipeline-001/results.zip\n/home/testpipeline-002/results.zip",
+          "parserType": "array",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
