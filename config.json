@@ -38,14 +38,14 @@
         "name": "username",
         "viewName": "Username",
         "type": "string",
-        "description": "Username for SMTP server authentication.",
+        "description": "Username for SMTP server authentication",
         "placeholder": "myuser@host.com"
       },
       {
         "name": "password",
         "viewName": "Password",
         "type": "vault",
-        "description": "Password for SMTP server authentication."
+        "description": "Password for SMTP server authentication"
       }
     ]
   },
@@ -54,7 +54,7 @@
       "name": "from",
       "viewName": "Default From",
       "type": "string",
-      "description": "The default value for email address of the sender of the email.",
+      "description": "The default value for email address of the sender of the email",
       "placeholder": "kaholo-notifications@myorg.com"
     }
   ],
