@@ -113,7 +113,7 @@
         },
         {
           "name": "html",
-          "viewName": "HTML version of email Message",
+          "viewName": "HTML Message",
           "type": "string",
           "description": "HTML version of email message body",
           "placeholder": "<b><em>Your Pipeline has completed sucessfully!</em></b><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/64/Champagne_uncorking_photographed_with_a_high_speed_air-gap_flash.jpg\" alt=\"champagne image\">",
