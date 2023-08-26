@@ -4,9 +4,9 @@
   "type": "executer",
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "imgUrl": "logo.png",
-  "description": "Sends email via SMTP server",
+  "description": "Send email using an SMTP server",
   "keywords": [
     "email",
     "mail",
